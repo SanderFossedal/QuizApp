@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+
+    <string name="quizTime">Quiz Time</string>
+    <string name="play">Play</string>
+    <string name="gallery">Gallery</string>
+
+    <string name="addPicture">Add Picture</string>
+    <string name="removePicture">Remove Picture</string>
+    <string name="back">Back</string>
+    <string name="sort">Sort A-Z</string>
+    <string name="delete">Delete</string>
+
+    <string-array name="animal_names">
+        <item>Polar Bear</item>
+        <item>Gorilla</item>
+    </string-array>
+</resources>
