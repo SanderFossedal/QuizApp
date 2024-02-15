@@ -3,6 +3,7 @@ package com.example.quizapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,13 +17,15 @@ public class Gallery_Item_Click extends AppCompatActivity {
         setContentView(R.layout.activity_gallery_item_click);
 
         String name = getIntent().getStringExtra("NAME");
-        int image = getIntent().getIntExtra("IMAGE", 0);
+        //int image = getIntent().getIntExtra("IMAGE", 0);
+        String imageUriString = getIntent().getStringExtra("IMAGE");
+        Uri imageUri = Uri.parse(imageUriString);
 
         TextView textView = findViewById(R.id.animal_name_text);
         ImageView imageView = findViewById(R.id.animal_image_big);
 
         textView.setText(name);
-        imageView.setImageResource(image);
+        imageView.setImageURI(imageUri);
     }
 
     public void backButton(View view){

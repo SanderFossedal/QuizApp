@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.quizapp.model.AnimalList;
+
 public class MainActivity extends AppCompatActivity {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,5 +19,6 @@ public class MainActivity extends AppCompatActivity {
     public void galleryButton(View view){
         Intent intent = new Intent(this, GalleryV2.class);
         startActivity(intent);
+
     }
 }

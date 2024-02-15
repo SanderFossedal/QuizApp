@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quizapp.R;
+import com.example.quizapp.model.AnimalList;
 import com.example.quizapp.model.AnimalModel;
 
 import java.util.ArrayList;
@@ -19,8 +20,8 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
 
     private final RecyclerViewInterface recyclerViewInterface;
     Context context;
-    ArrayList<AnimalModel> animalsList;
-    public recyclerViewAdapter(Context context, ArrayList<AnimalModel> animalsList,
+    AnimalList animalsList;
+    public recyclerViewAdapter(Context context, AnimalList animalsList,
                                RecyclerViewInterface recyclerViewInterface){
         this.context = context;
         this.animalsList = animalsList;
@@ -41,8 +42,8 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
         //assigning values to the view created in the single_item layout
         // based on the position of the recycler view.
 
-        holder.textView.setText(animalsList.get(position).getName());
-        holder.imageView.setImageResource(animalsList.get(position).getImage());
+        holder.textView.setText(animalsList.getSingleAnimal(position).getName());
+        holder.imageView.setImageURI(animalsList.getSingleAnimal(position).getImage());
     }
 
     @Override

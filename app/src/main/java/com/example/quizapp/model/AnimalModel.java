@@ -5,25 +5,26 @@ import android.provider.MediaStore;
 
 public class AnimalModel {
 
-    private int image;
+    //private int image;
+
+    private Uri image;
     private String name;
 
-    public AnimalModel(int image, String name) {
+//    public AnimalModel(int image, String name) {
+//        this.image = image;
+//        this.name = name;
+//    }
+
+    public AnimalModel(Uri image, String name){
         this.image = image;
         this.name = name;
     }
 
-//    public AnimalModel(int pictureId, String name){
-//        Uri uri = Uri.withAppendedPath( MediaStore.Images.Media.EXTERNAL_CONTENT_URI, Integer.toString(pictureId) );
-//        image = uri;
-//        this.name = name;
-//    }
-
-    public int getImage() {
+    public Uri getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(Uri image) {
         this.image = image;
     }
 
@@ -33,5 +34,18 @@ public class AnimalModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+
+        // Check if the object is an instance of AnimalModel
+        if (!(obj instanceof AnimalModel)) return false;
+
+        AnimalModel other = (AnimalModel) obj;
+
+        // Compare the data members and return accordingly
+        return this.name.equals(other.name) && this.image.equals(other.image);
     }
 }
