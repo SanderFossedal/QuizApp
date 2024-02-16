@@ -106,4 +106,8 @@ public class AnimalList{
 
         return answers;
     }
+
+    public void sortAnimalsByName() {
+        Collections.sort(listOfAnimals, (animal1, animal2) -> animal1.getName().compareToIgnoreCase(animal2.getName()));
+    }
 }
