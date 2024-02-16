@@ -37,6 +37,9 @@ public class GalleryV2 extends AppCompatActivity implements RecyclerViewInterfac
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    public void addButton(){
+        
+    }
 
     @Override
     public void onItemClick(int position) {
