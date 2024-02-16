@@ -6,6 +6,8 @@ import android.net.Uri;
 
 import com.example.quizapp.R;
 
+import java.io.Serializable;
+
 public class GlobalList extends Application {
 
     private static AnimalList animalList;

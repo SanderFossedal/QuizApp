@@ -1,12 +1,14 @@
 package com.example.quizapp.model;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AnimalList {
+public class AnimalList{
 
     private List<AnimalModel> listOfAnimals;
 
@@ -36,6 +38,17 @@ public class AnimalList {
 
     public void deleteAnimal(AnimalModel animal){
         listOfAnimals.remove(animal);
+    }
+
+    public void deleteAnimalByName(String name) {
+        Iterator<AnimalModel> iterator = listOfAnimals.iterator();
+        while (iterator.hasNext()) {
+            AnimalModel animal = iterator.next();
+            if (animal.getName().equals(name)) {
+                iterator.remove();
+                break; // Remove this line if you want to remove all animals with the given name
+            }
+        }
     }
 
 

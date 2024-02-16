@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.quizapp.adapter.RecyclerViewInterface;
 import com.example.quizapp.adapter.recyclerViewAdapter;
@@ -17,9 +18,6 @@ import com.example.quizapp.model.GlobalList;
 import java.util.ArrayList;
 
 public class GalleryV2 extends AppCompatActivity implements RecyclerViewInterface {
-
-    //ArrayList<AnimalModel> animals = new ArrayList<>();
-    //int[] images = {R.drawable.polar_bear, R.drawable.gorilla};
 
     //private AnimalList animalList;
     @Override
@@ -39,13 +37,6 @@ public class GalleryV2 extends AppCompatActivity implements RecyclerViewInterfac
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-//    private void setUpAnimalModels(){
-//        String[] animalNames = getResources().getStringArray(R.array.animal_names);
-//
-//        for(int i = 0; i< animalNames.length; i++){
-//            animals.add(new AnimalModel(images[i], animalNames[i]));
-//        }
-//    }
 
     @Override
     public void onItemClick(int position) {
@@ -58,8 +49,14 @@ public class GalleryV2 extends AppCompatActivity implements RecyclerViewInterfac
 
         Uri imageUri = GlobalList.getAnimalList().getSingleAnimal(position).getImage();
         intent.putExtra("IMAGE", imageUri.toString());
-        //intent.putExtra("IMAGE", GlobalList.getAnimalList().getSingleAnimal(position).getImage());
 
+        //intent.putExtra("ANIMAL", GlobalList.getAnimalList().getSingleAnimal(position));
+
+        startActivity(intent);
+    }
+
+    public void backButton(View view){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

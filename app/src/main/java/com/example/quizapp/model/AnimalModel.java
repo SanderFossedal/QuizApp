@@ -3,6 +3,8 @@ package com.example.quizapp.model;
 import android.net.Uri;
 import android.provider.MediaStore;
 
+import java.io.Serializable;
+
 public class AnimalModel {
 
     //private int image;
