@@ -5,7 +5,6 @@ QuizApp is an Android application designed for users to participate in animal-ba
 
 ## Features
 - **Quiz**: Presents users with animal images and multiple choice answers for guessing the correct name. Tracks user's scores and attempts!
-![MainMenu](main_screen.png)
 - **Gallery**: Displays a collection of animal images with names. Users can browse and view various animal pictures.
 - **Image Upload**: Offers functionality for users to contribute by uploading and naming their own animal pictures to the gallery.
 - **Content Management**: Utilizes dynamic lists for managing the quiz questions and gallery images, ensuring a varied user experience.
