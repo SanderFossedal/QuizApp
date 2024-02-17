@@ -38,6 +38,14 @@ public class GalleryActivity extends AppCompatActivity implements RecyclerViewIn
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    /**
+     * Handles the sorting of animals by their names and updates the UI accordingly.
+     * This method sorts the global list of animals either in ascending (A-Z) or descending (Z-A) order,
+     * based on the current sorting state. After sorting, it refreshes the RecyclerView to display the sorted list.
+     * It also updates the text of the sort button to reflect the current sorting order for the next sort action.
+     *
+     * @param view The view that triggered this method, typically a sort button in the user interface.
+     */
     public void sortButton(View view){
         // Sort the global list of animals
         GlobalList.getAnimalList().sortAnimalsByName();
@@ -58,9 +66,19 @@ public class GalleryActivity extends AppCompatActivity implements RecyclerViewIn
         // Launch the gallery to pick an image
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
-        startActivityForResult(photoPickerIntent, GALLERY_REQUEST); // Make sure GALLERY_REQUEST is a defined constant
+        startActivityForResult(photoPickerIntent, GALLERY_REQUEST);
     }
 
+
+    /**
+     * Handles the result from launching the gallery for image selection.
+     * If the result is OK and the request code matches, prompts the user to enter a name for the new animal.
+     *
+     * @param requestCode The integer request code originally supplied to startActivityForResult(),
+     *                    allowing identification of who this result came from.
+     * @param resultCode  The integer result code returned by the child activity through its setResult().
+     * @param data        An Intent, which can return result data to the caller (various data can be attached as Extras).
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -71,6 +89,13 @@ public class GalleryActivity extends AppCompatActivity implements RecyclerViewIn
         }
     }
 
+    /**
+     * Displays a dialog prompting the user to enter a name for the new animal picture selected from the gallery.
+     * If a name is entered and confirmed with "OK", a new AnimalModel instance is created and added to the global list.
+     * The RecyclerView is then refreshed to include the newly added animal.
+     *
+     * @param imageUri The URI of the selected image to be associated with the new animal.
+     */
     private void promptForAnimalName(Uri imageUri) {
         final EditText input = new EditText(this);
         new AlertDialog.Builder(this)

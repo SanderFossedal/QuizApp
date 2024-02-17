@@ -42,6 +42,14 @@ public class Gallery_Item_Click extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Initiates the deletion process of a picture by displaying a confirmation dialog to the user.
+     * When the "Delete" button is clicked in the dialog, it proceeds to delete the animal with the
+     * specified name from the global list of animals and then navigates back to the previous screen.
+     * If "Cancel" is chosen, the dialog simply closes without taking any action.
+     *
+     * @param view The view that triggered this method, typically a button in the user interface.
+     */
     public void deleteButton(View view){
         // Bruker AlertDialog.Builder for å bygge og vise en dialogboks til brukeren
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

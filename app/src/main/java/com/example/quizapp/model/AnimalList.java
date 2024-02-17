@@ -41,13 +41,21 @@ public class AnimalList{
         listOfAnimals.remove(animal);
     }
 
+    /**
+     * Removes the first animal with the specified name from the list of animals.
+     * This method iterates over the list of animals and removes the first occurrence
+     * of an animal that has a matching name. If no animal with the specified name
+     * is found, the list remains unchanged.
+     *
+     * @param name The name of the animal to be removed from the list.
+     */
     public void deleteAnimalByName(String name) {
         Iterator<AnimalModel> iterator = listOfAnimals.iterator();
         while (iterator.hasNext()) {
             AnimalModel animal = iterator.next();
             if (animal.getName().equals(name)) {
                 iterator.remove();
-                break; // Remove this line if you want to remove all animals with the given name
+                break;
             }
         }
     }
@@ -108,6 +116,10 @@ public class AnimalList{
         return answers;
     }
 
+    /**
+     * Sorts the list of animals by their names either in ascending (A-Z) or descending (Z-A) order,
+     * toggling the sorting order each time the method is called.
+     */
     public void sortAnimalsByName() {
         if (isSortedAscending) {
             // Sorter A-Z
