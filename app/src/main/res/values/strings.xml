@@ -11,6 +11,8 @@
     <string name="sort">Sort A-Z</string>
     <string name="delete">Delete</string>
 
+    <string name="back_button">Back</string>
+
     <string-array name="animal_names">
         <item>Polar Bear</item>
         <item>Gorilla</item>

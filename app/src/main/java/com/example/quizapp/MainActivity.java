@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.quizapp.model.AnimalList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,9 +15,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void galleryButton(View view){
-        Intent intent = new Intent(this, GalleryV2.class);
+    public void galleryButton(View view) {
+        Intent intent = new Intent(this, GalleryActivity.class);
         startActivity(intent);
+    }
 
+    public void playButton(View view) {
+        Intent intent = new Intent(this, QuizActivity.class);
+        startActivity(intent);
     }
 }

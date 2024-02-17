@@ -28,6 +28,7 @@
         android:layout_height="63dp"
         android:layout_marginTop="132dp"
         android:background="@drawable/blue_button"
+        android:onClick="playButton"
         android:text="@string/play"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="34sp"

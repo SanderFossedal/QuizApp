@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class AnimalList{
-
+    // Standardverdi for sortering
+    private boolean isSortedAscending = true;
     private List<AnimalModel> listOfAnimals;
 
     public AnimalList() {
@@ -108,6 +109,19 @@ public class AnimalList{
     }
 
     public void sortAnimalsByName() {
-        Collections.sort(listOfAnimals, (animal1, animal2) -> animal1.getName().compareToIgnoreCase(animal2.getName()));
+        if (isSortedAscending) {
+            // Sorter A-Z
+            Collections.sort(listOfAnimals, (animal1, animal2) -> animal1.getName().compareToIgnoreCase(animal2.getName()));
+        } else {
+            // Sorter Z-A
+            Collections.sort(listOfAnimals, (animal1, animal2) -> animal2.getName().compareToIgnoreCase(animal1.getName()));
+        }
+        // Bytt sorteringstilstand
+        isSortedAscending = !isSortedAscending;
+    }
+
+    // La til denne da den brukes på sortButton i GalleryActivity
+    public boolean getIsSortedAscending() {
+        return isSortedAscending;
     }
 }

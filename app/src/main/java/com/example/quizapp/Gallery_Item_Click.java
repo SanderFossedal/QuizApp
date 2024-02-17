@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.quizapp.model.AnimalModel;
 import com.example.quizapp.model.GlobalList;
 
 public class Gallery_Item_Click extends AppCompatActivity {
@@ -39,7 +38,7 @@ public class Gallery_Item_Click extends AppCompatActivity {
     }
 
     public void backButton(View view){
-        Intent intent = new Intent(this, GalleryV2.class);
+        Intent intent = new Intent(this, GalleryActivity.class);
         startActivity(intent);
     }
 
